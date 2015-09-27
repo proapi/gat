@@ -22,5 +22,16 @@ module Gat
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.generators do |g|
+      g.helper              false
+      g.stylesheets         false
+      g.javascripts         false
+      g.view_specs          false
+      g.test_framework      :rspec
+      g.template_engine     :slim
+      g.fixture_replacement :factory_girl
+    end
+
   end
 end
