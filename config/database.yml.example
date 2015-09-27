@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: gat-production
+  database: database: gat-production
