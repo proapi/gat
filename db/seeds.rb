@@ -33,3 +33,6 @@ TargetGroup.destroy_all
   panel = index < 3 ? panels[index] : panels.sample
   TargetGroup.create(name: "TargetGroup#{index + 1}", panel_provider: panel, external_id: SecureRandom.hex, secret_code: SecureRandom.hex, parent: nil).create_children
 end
+
+#ApiToken just to not create it from console for the first time
+ApiToken.create
