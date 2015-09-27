@@ -18,5 +18,13 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+
+  gem 'rspec-rails', '~> 3.3.3'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec', require: false
+  gem 'guard-bundler', require: false
 end
 
