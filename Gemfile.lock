@@ -219,6 +219,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   pg
   rails (= 4.2.0)
   rspec-rails (~> 3.3.3)

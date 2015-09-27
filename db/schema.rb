@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927144409) do
+ActiveRecord::Schema.define(version: 20150927180555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,10 @@ ActiveRecord::Schema.define(version: 20150927144409) do
     t.string   "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "price_type"
   end
+
+  add_index "panel_providers", ["price_type"], name: "index_panel_providers_on_price_type", using: :btree
 
   create_table "target_groups", force: :cascade do |t|
     t.string   "name"
