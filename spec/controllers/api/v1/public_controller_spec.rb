@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::PublicControllerController, type: :controller do
+RSpec.describe Api::V1::PublicController, type: :controller do
 
 end
