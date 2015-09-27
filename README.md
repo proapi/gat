@@ -44,13 +44,13 @@
   Request #1
   
   ```
-    curl http://localhost:3000/private/locations/pl -H 'Accept:application/json'
+    curl http://localhost:3000/private/locations/pl -H 'Accept:application/json' -H 'Authorization: Token token="1b1a2e3a976007a0b9aa559add270fed"'
   ```
   
   Request #2
   
   ```
-    curl http://localhost:3000/private/target_groups/pl -H 'Accept:application/json'
+    curl http://localhost:3000/private/target_groups/pl -H 'Accept:application/json' -H 'Authorization: Token token="1b1a2e3a976007a0b9aa559add270fed"'
   ```
     
   Request #3
