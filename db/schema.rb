@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927083504) do
+ActiveRecord::Schema.define(version: 20150927083749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150927083504) do
   end
 
   add_index "countries", ["panel_provider_id"], name: "index_countries_on_panel_provider_id", using: :btree
+
+  create_table "location_groups", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "country_id"
+    t.integer  "panel_provider_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "location_groups", ["country_id"], name: "index_location_groups_on_country_id", using: :btree
+  add_index "location_groups", ["panel_provider_id"], name: "index_location_groups_on_panel_provider_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
@@ -40,4 +51,6 @@ ActiveRecord::Schema.define(version: 20150927083504) do
   end
 
   add_foreign_key "countries", "panel_providers"
+  add_foreign_key "location_groups", "countries"
+  add_foreign_key "location_groups", "panel_providers"
 end
