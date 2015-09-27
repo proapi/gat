@@ -26,3 +26,10 @@ location_groups.each do |lg|
     Location.create(name: "Location#{index}", location_groups: [lg], external_id: SecureRandom.hex, secret_code: SecureRandom.hex)
   end
 end
+
+#TargetGroups
+TargetGroup.destroy_all
+0.upto(3) do |index|
+  panel = index < 3 ? panels[index] : panels.sample
+  TargetGroup.create(name: "TargetGroup#{index + 1}", panel_provider: panel, external_id: SecureRandom.hex, secret_code: SecureRandom.hex, parent: nil).create_children
+end
